@@ -16,7 +16,7 @@ import img4 from "../../imgs/HeroImgs/hero4.jpg";
 import img5 from "../../imgs/HeroImgs/hero5.jpg";
 import img6 from "../../imgs/HeroImgs/hero6.jpg";
 import img7 from "../../imgs/HeroImgs/hero7.jpg";
-import logo from "../../imgs/logo.png";
+import logo from "../../imgs/Logo.png";
 
 const images = [img1, img2, img3, img4, img5, img6, img7];
 
