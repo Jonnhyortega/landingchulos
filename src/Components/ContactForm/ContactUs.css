@@ -1,0 +1,56 @@
+form {
+  background-color: transparent;
+  padding: 15px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form > p {
+  color: var(--greenFull1);
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+textarea {
+  width: 350px;
+  height: 200px;
+  resize: none;
+  border-radius: 5px;
+  background: transparent;
+  color: black;
+  font-size: 1em;
+  font-family: "Poppins", sans-serif;
+  padding: 0.4em;
+  margin: 0 auto;
+}
+
+@media (max-width: 668px) {
+  textarea{width: 100%;}
+}
+
+textarea::placeholder {
+  color: black;
+  font-weight: 300;
+  font-size: 1em;
+}
+
+input[type="submit"] {
+  width: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: var(--greenFull1);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--greenFull3);
+}
