@@ -14,7 +14,7 @@ export const NavbarContainer = styled.div`
   z-index: 1000;
   border-radius: 5px;
   border: 1px solid var(--greenFull1);
-  backdrop-filter: blur(25px) saturate(180%);
+  backdrop-filter: blur(5px) saturate(180%);
   -webkit-backdrop-filter: blur(25px) saturate(180%);
   background-color: rgba(255, 255, 255, 0);
 `;

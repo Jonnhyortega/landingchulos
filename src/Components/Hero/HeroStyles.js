@@ -23,10 +23,10 @@ export const HeroContainer = styled.section`
   text-align: center;
   width: 100%;
   overflow: hidden;
-  height: 90vh;
+  height: 100vh;
   background-color: #0d0d0d;
   @media (max-width: 768px) {
-    height: 80vh;
+    height: 100vh;
   }
 `;
 
@@ -67,6 +67,8 @@ export const Logo = styled.img`
   z-index: 2;
   border-radius: 50%;
   box-shadow: 1px 1px 5px black;
+
+  
 `;
 
 export const HeroTitle = styled.h1`
