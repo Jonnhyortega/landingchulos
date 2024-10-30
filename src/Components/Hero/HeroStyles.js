@@ -106,3 +106,7 @@ export const HeroSubtitle = styled.h2`
     font-size: 1.2rem;
   }
 `;
+
+export const LogoWrapper = styled.div`
+
+`

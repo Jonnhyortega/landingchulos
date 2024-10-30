@@ -9,7 +9,6 @@ import {
   SocialIconsContainer,
   SocialIcon,
   CopyRight,
-  LogoWrapper,
   LogoTitle,
   CreatorTag,
 } from "./FooterStyles";
@@ -58,16 +57,13 @@ export function Footer() {
             >
               <FaTiktok />
             </SocialIcon>
-            {/* <SocialIcon target="blank" href="https://wa.me/5491158227373">
-              <FaWhatsapp />
-            </SocialIcon> */}
           </SocialIconsContainer>
         </FooterColumn>
       </FooterContent>
       <CopyRight>
-        <LogoWrapper>
+        <div>
           <LogoTitle>Chulo's</LogoTitle>
-        </LogoWrapper>
+        </div>
         © 2024 Todos los derechos reservados.
       </CopyRight>
       <CreatorTag href="https://wa.link/hey16u">Creator</CreatorTag>
