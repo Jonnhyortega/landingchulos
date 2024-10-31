@@ -35,11 +35,13 @@ export const MenuContainer = styled.div`
   gap: 20px;
   border-radius: 5px;
   border: 1px solid var(--greenFull1);
-  background-image: url(${(props) => props.$bckgImg});
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
+  // background-image: url(${(props) => props.$bckgImg});
+  // background-size: cover;
+  // background-position: center;
+  // background-attachment: fixed;
+  backdrop-filter: blur(25px) saturate(50%);
+  -webkit-backdrop-filter: blur(25px) saturate(50%);
+  background-color: rgba(255, 255, 255, 0);
   &.open {
     animation: ${slideIn} 0.5s forwards;
     opacity: 1;
@@ -50,12 +52,12 @@ export const MenuContainer = styled.div`
   }
 
   button {
-    color: white;
+    color: var(--greenFull1);
     border: none;
     position: absolute;
     background: transparent;
     right: 10px;
-    top:0;
+    top: 0;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
@@ -65,14 +67,15 @@ export const MenuContainer = styled.div`
 
 export const MenuItem = styled.div`
   display: block;
-  padding: 1em;
-  color: white;
+  color: var(--greenFull3);
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
   transition: 0.5s;
-  background: var(--greenFull1);
+  background: transparent;
   border-radius: 15px;
+  
+  
   &:hover {
     color: black;
     letter-spacing: 2px;

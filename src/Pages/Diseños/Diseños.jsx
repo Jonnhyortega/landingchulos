@@ -10,7 +10,7 @@ import {
   ArrowButton,
 } from "./DiseñosStyles";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
-import { RiCloseLargeLine } from "react-icons/ri";
+import { RiCloseLine } from "react-icons/ri";
 import { ButtonFirst } from "../../Components/Buttons/ButtonFirst/ButtonFirst";
 import img1 from "../../imgs/Divisores/DivisoresImg1.webp";
 import img2 from "../../imgs/Divisores/DivisoresImg2.webp";
@@ -27,6 +27,11 @@ export default function Diseños() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Variables para deslizador táctil
+  let touchStartX = 0;
+  let touchEndX = 0;
+
   const openOverlay = (index) => {
     setCurrentIndex(index);
     setIsOpen(true);
@@ -80,6 +85,24 @@ export default function Diseños() {
     window.open("https://wa.me/5491158227373", "_blank");
   };
 
+  // Funciones para el deslizador táctil
+  const handleTouchStart = (e) => {
+    touchStartX = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX - touchEndX > 50) {
+      goToNextImage(); // Deslizar a la izquierda
+    }
+    if (touchEndX - touchStartX > 50) {
+      goToPrevImage(); // Deslizar a la derecha
+    }
+  };
+
   return (
     <DiseñosWrapper>
       <h2>Divisores de Madera</h2>
@@ -99,9 +122,14 @@ export default function Diseños() {
       </Gallery>
 
       {isOpen && (
-        <Overlay onClick={handleOverlayClick}>
+        <Overlay
+          onClick={handleOverlayClick}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <CloseButton onClick={closeOverlay}>
-            <RiCloseLargeLine />
+            <RiCloseLine />
           </CloseButton>
           <ArrowButton left onClick={goToPrevImage}>
             <AiOutlineArrowLeft />

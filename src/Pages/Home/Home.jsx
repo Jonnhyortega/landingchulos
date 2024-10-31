@@ -11,7 +11,7 @@ export function Home() {
       <Hero />
       <AboutUs />
       <Benefits />
-      <Banner/>
+      {/* <Banner/> */}
       <Contact/>
     </HomeWrapper>
   );
