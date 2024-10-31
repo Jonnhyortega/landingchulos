@@ -61,7 +61,7 @@ const AboutUs = () => {
           />
         </ImageSlider>
       </ContentWrapper>
-      <ButtonFirst content={"Contactanos"} work={redirectToWhatSapp} />
+      <ButtonFirst content={"Info"} work={redirectToWhatSapp} />
     </AboutUsWrapper>
   );
 };

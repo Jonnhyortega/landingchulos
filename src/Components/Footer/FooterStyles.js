@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
-  background-color: #333333;
   color: #e0e0e0;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+
+
+  background-image: url(${(props) => props.$bckgImg});
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 `;
 
 export const FooterContent = styled.div`
@@ -28,13 +33,13 @@ export const FooterColumn = styled.div`
 `;
 
 export const FooterTitle = styled.h3`
-  font-size: 1.3em;
+  font-size: 1.5em;
   margin-bottom: 10px;
-  color: var(--greenFull2);
+  color: var(--greenFull1);
 `;
 
 export const FooterLink = styled.a`
-  color: var(--silverFull7);
+  color: white;
   margin: 5px 0;
   text-decoration: none;
   transition: 0.3s ease-in-out;
@@ -50,10 +55,12 @@ export const SocialIconsContainer = styled.div`
   display: flex;
   gap: 20px;
   margin-top: 10px;
+  font-weight: bold;
 `;
 
 export const SocialIcon = styled.a`
-  color: var(--greenFull1);
+  color: white;
+  font-weight: bold;
   font-size: 1.8em;
   transition: 1s ease-in-out;
 
@@ -66,14 +73,15 @@ export const SocialIcon = styled.a`
 export const CopyRight = styled.div`
   font-size: 0.9em;
   margin-top: 20px;
-  color: #a9a9a9;
+  color: white;
   text-align: center;
 `;
 
 export const LogoTitle = styled.h2`
   font-size: 2rem;
   font-family: "Dancing Script", cursive;
-  background: var(--silverFull7);
+  font-weight: bold;
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: opacity 0.8s ease-in-out;

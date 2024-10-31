@@ -22,8 +22,8 @@ export const MenuContainer = styled.div`
   position: fixed;
   top: 80px;
   left: 0;
-  width: 90%;
-  height: 80vh;
+  width: 88%;
+  height: 60vh;
   padding: 1rem;
   transform: translateY(-200%);
   opacity: 0;

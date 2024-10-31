@@ -1,7 +1,4 @@
-// BenefitsStyles.js
 import styled, { keyframes } from "styled-components";
-import benefitsBckg from "../../imgs/Divisores/DivisoresImg1.jpg";
-// Animaciones
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -15,7 +12,7 @@ const fadeIn = keyframes`
 
 export const BenefitsWrapper = styled.section`
   padding: 100px;
-  display: flex;
+  display: flex;  
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -80,7 +77,7 @@ export const Card = styled.div`
 `;
 
 export const StyledIcon = styled.div`
-  font-size: 4rem; /* Tamaño del ícono */
+  font-size: 4rem; 
   color: var(--greenFull1);
   margin-bottom: 1rem;
   transition: color 0.3s ease-in-out;

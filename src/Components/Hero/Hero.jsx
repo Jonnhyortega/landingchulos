@@ -6,16 +6,17 @@ import {
   Content,
   BackgroundImage,
   Logo,
+  ButtonsBox
 } from "./HeroStyles";
 import { useNavigate } from "react-router-dom";
 import { ButtonFirst } from "../Buttons/ButtonFirst/ButtonFirst";
 import img1 from "../../imgs/HeroImgs/hero1.jpg";
 import img2 from "../../imgs/HeroImgs/hero2.jpg";
-import img3 from "../../imgs/HeroImgs/hero3.jpg";
-import img4 from "../../imgs/HeroImgs/hero4.jpg";
-import img5 from "../../imgs/HeroImgs/hero5.jpg";
-import img6 from "../../imgs/HeroImgs/hero6.jpg";
-import img7 from "../../imgs/HeroImgs/hero7.jpg";
+import img3 from "../../imgs/HeroImgs/hero3.webp";
+import img4 from "../../imgs/HeroImgs/hero4.webp";
+import img5 from "../../imgs/HeroImgs/hero5.webp";
+import img6 from "../../imgs/HeroImgs/hero6.webp";
+import img7 from "../../imgs/HeroImgs/hero7.webp";
 import logo from "../../imgs/Logo.png";
 
 const images = [img1, img2, img3, img4, img5, img6, img7];
@@ -27,6 +28,9 @@ export const Hero = () => {
 
   const handleRedirect = () => {
     navigate("/disenos");
+  };
+  const handleRedirectStore = () => {
+    window.open("http://chulosdesign.mitiendanube.com")
   };
 
   useEffect(() => {
@@ -49,7 +53,7 @@ export const Hero = () => {
 
   return (
     <HeroContainer>
-      <BackgroundImage $bckgImg={images[currentImage]} />
+      <BackgroundImage onLoad="lazy" $bckgImg={images[currentImage]} />
       <Content $isVisible={isVisible}>
         <Logo src={logo} alt="Logo" />
         <HeroTitle>Renová tu espacio</HeroTitle>
@@ -58,7 +62,10 @@ export const Hero = () => {
             Con funcionalidad y elegancia con nuestros divisores de madera
           </strong>
         </HeroSubtitle>
+        <ButtonsBox>
         <ButtonFirst content={"Ver diseños"} work={handleRedirect} />
+        <ButtonFirst content={"Ver tienda"} work={handleRedirectStore} />
+        </ButtonsBox>
       </Content>
     </HeroContainer>
   );

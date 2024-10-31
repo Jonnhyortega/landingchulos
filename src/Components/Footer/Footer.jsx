@@ -19,10 +19,13 @@ import {
   FaTiktok,
   FaWhatsapp,
 } from "react-icons/fa";
+import bckgMenu from "../../imgs/MenuBckg/menuBckg1.webp"
+
+
 export function Footer() {
   const navigateTo = useNavigate();
   return (
-    <FooterWrapper>
+    <FooterWrapper $bckgImg={bckgMenu}>
       <FooterContent>
         <FooterColumn>
           <FooterTitle>Contáctanos</FooterTitle>

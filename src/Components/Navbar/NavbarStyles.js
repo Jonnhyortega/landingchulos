@@ -10,13 +10,18 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: .6rem;
   z-index: 1000;
   border-radius: 5px;
   border: 1px solid var(--greenFull1);
-  backdrop-filter: blur(5px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0);
+  // backdrop-filter: blur(5px) saturate(180%);
+  // -webkit-backdrop-filter: blur(25px) saturate(180%);
+  // background-color: rgba(255, 255, 255, 0);
+
+  background-image: url(${(props) => props.$bckgImg});
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 `;
 
 
@@ -46,13 +51,14 @@ export const LinksContainer = styled.div`
 
 export const NavLinkStyled = styled(Link)`
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  color: var(--greenFull3);
-
+  font-weight: 600;
+  font-size: 1.2em;
+  transition: color 0.1s ease;
+  color: white;
+  
   &:hover {
-    color: white;
-    text-shadow: 0 0 3px black;
+    color: var(--greenFull7);
+    // text-shadow: 0 0 3px white;
 
   }
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {ButtonFirst} from "../../Buttons/ButtonFirst/ButtonFirst"
+import logo from "../../../imgs/Logo.png"
 const ModalFormWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -62,6 +63,12 @@ const ModalFormWrapper = styled.div`
     color: var(--silverFull7);
     font-family: "Poppins", sans-serif;
   }
+
+  div > img {
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  }
 `;
 export default function ModalForm({ updateModalOpen }) {
   const hookTo = useNavigate();
@@ -73,11 +80,11 @@ export default function ModalForm({ updateModalOpen }) {
   return (
     <ModalFormWrapper>
       <div>
+        <img src={logo} alt="Logo chulos" />
         <p>
           ¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto
           contigo lo antes posible. Gracias por tu interés.
         </p>
-        <span>Chulo's</span>
         <ButtonFirst content={"Volver al home"} work={handleClick}></ButtonFirst>
       </div>
     </ModalFormWrapper>

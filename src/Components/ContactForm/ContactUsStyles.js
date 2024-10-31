@@ -9,9 +9,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  // * {
-  //   border: 1px solid;
-  // }
+
 `;
 
 export const ContactInfo = styled.div`
@@ -27,9 +25,11 @@ export const ContactInfo = styled.div`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  
-  @media(max-width: 768px){
+
+  @media (max-width: 768px) {
     background-attachment: center;
+    width: 100%;
+    paddign: 1em;
   }
 
   &::before {
@@ -55,16 +55,8 @@ export const FirstBoxContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1em;
   z-index: 2;
-`;
-
-export const IconContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  svg {
-    margin: 0 1em 0 1em;
-    color: var(--greenFull7);
-  }
 
   a,
   p {
@@ -76,6 +68,11 @@ export const IconContainer = styled.div`
 
   a:hover {
     color: var(--greenFull3);
+  }
+
+  svg {
+    margin-right: .4em;
+    color: var(--greenFull7);
   }
 `;
 

@@ -12,15 +12,15 @@ import {
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { ButtonFirst } from "../../Components/Buttons/ButtonFirst/ButtonFirst";
-import img1 from "../../imgs/Divisores/DivisoresImg1.jpg";
-import img2 from "../../imgs/Divisores/DivisoresImg2.jpg";
-import img3 from "../../imgs/Divisores/DivisoresImg3.jpg";
-import img4 from "../../imgs/Divisores/DivisoresImg4.jpg";
-import img5 from "../../imgs/Divisores/DivisoresImg5.jpg";
-import img6 from "../../imgs/Divisores/DivisoresImg6.jpg";
-import img7 from "../../imgs/Divisores/DivisoresImg7.jpg";
-import img8 from "../../imgs/Divisores/DivisoresImg8.jpg";
-import img9 from "../../imgs/Divisores/DivisoresImg9.jpg";
+import img1 from "../../imgs/Divisores/DivisoresImg1.webp";
+import img2 from "../../imgs/Divisores/DivisoresImg2.webp";
+import img3 from "../../imgs/Divisores/DivisoresImg3.webp";
+import img4 from "../../imgs/Divisores/DivisoresImg4.webp";
+import img5 from "../../imgs/Divisores/DivisoresImg5.webp";
+import img6 from "../../imgs/Divisores/DivisoresImg6.webp";
+import img7 from "../../imgs/Divisores/DivisoresImg7.webp";
+import img8 from "../../imgs/Divisores/DivisoresImg8.webp";
+import img9 from "../../imgs/Divisores/DivisoresImg9.webp";
 
 export default function Diseños() {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
@@ -79,7 +79,6 @@ export default function Diseños() {
   const redirectToWhatSapp = () => {
     window.open("https://wa.me/5491158227373", "_blank");
   };
-
 
   return (
     <DiseñosWrapper>

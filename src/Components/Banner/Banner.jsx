@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import bannerImage from "../../imgs/HeroImgs/hero4.jpg";
+import bannerImage from "../../imgs/HeroImgs/hero4.webp";
 
 const BannerWrapper = styled.div`
   height: 80vh;

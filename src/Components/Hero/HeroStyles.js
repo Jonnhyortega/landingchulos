@@ -1,6 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import defaultBckgImg from "../../imgs/backgroundHeroImg.jpeg";
-
 const fadeInOut = keyframes`
   0% {
     opacity: 0;
@@ -14,7 +12,7 @@ const fadeInOut = keyframes`
 `;
 
 export const HeroContainer = styled.section`
-  padding: 5em 0 0 0;
+  padding: 2em 0 0 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -27,6 +25,17 @@ export const HeroContainer = styled.section`
   background-color: #0d0d0d;
   @media (max-width: 768px) {
     height: 100vh;
+      padding: 4em 0 0 0;
+
+  }
+  @media (max-width: 668px) {
+      padding: 5em 0 0 0;
+
+  }
+  @media (max-width: 568px) {
+      padding: 6em 0 2em 0;
+      height: 100%;
+
   }
 `;
 
@@ -67,8 +76,6 @@ export const Logo = styled.img`
   z-index: 2;
   border-radius: 50%;
   box-shadow: 1px 1px 5px black;
-
-  
 `;
 
 export const HeroTitle = styled.h1`
@@ -109,6 +116,9 @@ export const HeroSubtitle = styled.h2`
   }
 `;
 
-export const LogoWrapper = styled.div`
+export const ButtonsBox = styled.div`
+  display: flex;
+  gap: 1em;
+`;
 
-`
+export const LogoWrapper = styled.div``;

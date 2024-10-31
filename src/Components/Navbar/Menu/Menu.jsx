@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuContainer, MenuItem } from "./MenuStyles";
-import bckgMenu from "../../../imgs/MenuBckg/menuBckg1.jpg"
+import bckgMenu from "../../../imgs/MenuBckg/menuBckg1.webp"
 export function Menu({ toggleMenu, isMenuOpen, closeMenu }) {
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -17,6 +17,7 @@ export function Menu({ toggleMenu, isMenuOpen, closeMenu }) {
     <>
       <MenuContainer
         $bckgImg={bckgMenu}
+        onLoad={lazy}
         className={isAnimating ? "closing" : isMenuOpen ? "open" : "closed"}
       >
         <button onClick={handleClose}>x</button>
