@@ -77,14 +77,10 @@ export const CopyRight = styled.div`
   text-align: center;
 `;
 
-export const LogoTitle = styled.h2`
-  font-size: 2rem;
-  font-family: "Dancing Script", cursive;
-  font-weight: bold;
-  background: white;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: opacity 0.8s ease-in-out;
+export const Logo = styled.img`
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px black;
 `;
 
 

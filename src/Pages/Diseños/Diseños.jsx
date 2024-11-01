@@ -107,10 +107,9 @@ export default function Diseños() {
     <DiseñosWrapper>
       <h2>Divisores de Madera</h2>
       <p>
-        Fabricamos divisores separadores de ambiente elaborados con madera
-        enchapada de primera calidad y melamina. Nuestros diseños incluyen
-        varillas móviles que permiten regular de manera eficiente la entrada de
-        luz, brindando tanto funcionalidad como estética a cualquier espacio.
+        Fabricamos divisores de ambiente elaborados en madera enchapada de
+        primera calidad de la linea Faplac con cantos de abs y varillas movibles
+        que regulan la entrada de luz. Realizamos diseños personalizados buscando la funcionalidad 
       </p>
       <ButtonFirst content={"Pedir cotizacion"} work={redirectToWhatSapp} />
       <Gallery>

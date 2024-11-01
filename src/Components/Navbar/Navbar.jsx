@@ -9,7 +9,7 @@ import {
   NavLinkStyled,
 } from "./NavbarStyles";
 import logo from "../../imgs/Logo.png";
-import bckgMenu from "../../imgs/MenuBckg/menuBckg1.webp";
+import bckgMenu from "../../imgs/MenuBckg/menuBckg.jpg";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,9 +19,9 @@ export const Navbar = () => {
 
   return (
     <NavbarContainer $bckgImg={bckgMenu}>
-      <HamburgerMenu onClick={toggleMenu}>&#9776;</HamburgerMenu>
 
       <Logo src={logo} alt="Logo" />
+      <HamburgerMenu onClick={toggleMenu}>&#9776;</HamburgerMenu>
 
       <LinksContainer>
         <NavLinkStyled to="/" onClick={closeMenu}>
@@ -31,10 +31,10 @@ export const Navbar = () => {
           Contacto
         </NavLinkStyled>
         <NavLinkStyled to="/about-us" onClick={closeMenu}>
-          Sobre Nosotros
+          Nosotros
         </NavLinkStyled>
         <NavLinkStyled to="/disenos" onClick={closeMenu}>
-          Nuestros Diseños
+          Diseños
         </NavLinkStyled>
       </LinksContainer>
 

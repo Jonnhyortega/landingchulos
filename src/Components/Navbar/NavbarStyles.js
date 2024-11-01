@@ -29,7 +29,7 @@ export const HamburgerMenu = styled.div`
   font-size: 2rem;
   cursor: pointer;
   display: none;
-  color: var(--greenFull5);
+  color: var(--greenFull1);
   @media (max-width: 768px) {
     display: block;
   }
@@ -55,7 +55,8 @@ export const NavLinkStyled = styled(Link)`
   font-size: 1.2em;
   transition: color 0.1s ease;
   color: white;
-  
+    color: var(--greenFull1);
+
   &:hover {
     color: var(--greenFull7);
     // text-shadow: 0 0 3px white;

@@ -12,7 +12,6 @@ const fadeInOut = keyframes`
 `;
 
 export const HeroContainer = styled.section`
-  padding: 2em 0 0 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,22 +20,22 @@ export const HeroContainer = styled.section`
   text-align: center;
   width: 100%;
   overflow: hidden;
-  height: 100vh;
   background-color: #0d0d0d;
-  @media (max-width: 768px) {
-    height: 100vh;
-      padding: 4em 0 0 0;
 
-  }
-  @media (max-width: 668px) {
-      padding: 5em 0 0 0;
+  // @media (max-width: 768px) {
+  //   height: 100vh;
+  //     padding: 4em 0 0 0;
 
-  }
-  @media (max-width: 568px) {
-      padding: 6em 0 2em 0;
-      height: 100%;
+  // }
+  // @media (max-width: 668px) {
+  //     padding: 5em 0 0 0;
 
-  }
+  // }
+  // @media (max-width: 568px) {
+  //     padding: 6em 0 2em 0;
+  //     height: 100%;
+
+  // }
 `;
 
 export const BackgroundImage = styled.div`
@@ -63,7 +62,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   color: #f4f4f4;
-
+  padding: 5em 0;
   button {
     margin-top: 2em;
   }
@@ -78,16 +77,16 @@ export const Logo = styled.img`
   box-shadow: 1px 1px 5px black;
 `;
 
-export const HeroTitle = styled.h1`
+export const HeroTitle = styled.h2`
   font-size: 4rem;
   font-weight: bold;
-  font-style: italic;
   padding: 0;
   margin: 0;
-  letter-spacing: 2px;
-  font-family: "Roboto", sans-serif;
+  letter-spacing: 3px;
+  font-family: "Dancing Script", cursive;
   color: var(--greenFull5);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 4px black;
+  filter: drop-shadow(1px 1px 5px black);
   text-align: right;
   width: 80%;
   @media (max-width: 768px) {
@@ -100,14 +99,15 @@ export const HeroSubtitle = styled.h2`
   padding: 0 2em;
   font-family: "Roboto", sans-serif;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  line-height: 1.4;
-
-  strong {
+  line-height: 1;
+  font-weight: 300;
+  
+  h1 {
     display: inline-block;
-    color: #f4f4f4;
-    font-weight: 500;
-    font-size: 1.8rem;
-    font-family: "Poppins", sans-serif;
+    color: var(--greenFull4);
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
     text-align: center;
   }
 

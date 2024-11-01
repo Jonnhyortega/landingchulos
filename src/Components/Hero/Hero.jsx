@@ -6,7 +6,7 @@ import {
   Content,
   BackgroundImage,
   Logo,
-  ButtonsBox
+  ButtonsBox,
 } from "./HeroStyles";
 import { useNavigate } from "react-router-dom";
 import { ButtonFirst } from "../Buttons/ButtonFirst/ButtonFirst";
@@ -30,7 +30,7 @@ export const Hero = () => {
     navigate("/disenos");
   };
   const handleRedirectStore = () => {
-    window.open("http://chulosdesign.mitiendanube.com")
+    window.open("http://chulosdesign.mitiendanube.com");
   };
 
   useEffect(() => {
@@ -56,15 +56,14 @@ export const Hero = () => {
       <BackgroundImage onLoad="lazy" $bckgImg={images[currentImage]} />
       <Content $isVisible={isVisible}>
         <Logo src={logo} alt="Logo" />
-        <HeroTitle>Renová tu espacio</HeroTitle>
+        <HeroTitle>Transformá tus espacios</HeroTitle>
         <HeroSubtitle>
-          <strong>
-            Con funcionalidad y elegancia con nuestros divisores de madera
-          </strong>
+          Combinando funcionalidad y elegancia con nuestros{" "}
+          <h1>divisores de madera</h1>
         </HeroSubtitle>
         <ButtonsBox>
-        <ButtonFirst content={"Ver diseños"} work={handleRedirect} />
-        <ButtonFirst content={"Ver tienda"} work={handleRedirectStore} />
+          <ButtonFirst content={"Ver diseños"} work={handleRedirect} />
+          <ButtonFirst content={"Ver tienda"} work={handleRedirectStore} />
         </ButtonsBox>
       </Content>
     </HeroContainer>

@@ -9,7 +9,7 @@ import {
   SocialIconsContainer,
   SocialIcon,
   CopyRight,
-  LogoTitle,
+  Logo,
   CreatorTag,
 } from "./FooterStyles";
 import {
@@ -19,9 +19,8 @@ import {
   FaTiktok,
   FaWhatsapp,
 } from "react-icons/fa";
-import bckgMenu from "../../imgs/MenuBckg/menuBckg1.webp"
-
-
+import bckgMenu from "../../imgs/MenuBckg/menuBckg.jpg";
+import logo from "../../imgs/Logo.png";
 export function Footer() {
   const navigateTo = useNavigate();
   return (
@@ -63,12 +62,11 @@ export function Footer() {
           </SocialIconsContainer>
         </FooterColumn>
       </FooterContent>
-      <CopyRight>
-        <div>
-          <LogoTitle>Chulo's</LogoTitle>
-        </div>
-        © 2024 Todos los derechos reservados.
-      </CopyRight>
+      <a href="/">
+        {" "}
+        <Logo src={logo} alt="Logo Chulos Design"></Logo>
+      </a>
+      <CopyRight>© 2024 Todos los derechos reservados.</CopyRight>
       <CreatorTag href="https://wa.link/hey16u">Creator</CreatorTag>
     </FooterWrapper>
   );
