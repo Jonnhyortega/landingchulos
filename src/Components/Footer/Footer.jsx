@@ -67,7 +67,7 @@ export function Footer() {
         <Logo src={logo} alt="Logo Chulos Design"></Logo>
       </a>
       <CopyRight>© 2024 Todos los derechos reservados.</CopyRight>
-      <CreatorTag href="https://wa.link/hey16u">Creator</CreatorTag>
+      {/* <CreatorTag href="https://wa.link/hey16u">Creator</CreatorTag> */}
     </FooterWrapper>
   );
 }
