@@ -109,7 +109,7 @@ export default function Diseños() {
       <p>
         Fabricamos divisores de ambiente elaborados en madera enchapada de
         primera calidad de la linea Faplac con cantos de abs y varillas movibles
-        que regulan la entrada de luz. Realizamos diseños personalizados buscando la funcionalidad 
+        que regulan la entrada de luz. Realizamos diseños personalizados buscando funcionalidad y estética. 
       </p>
       <ButtonFirst content={"Pedir cotizacion"} work={redirectToWhatSapp} />
       <Gallery>

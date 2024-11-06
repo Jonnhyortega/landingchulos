@@ -62,7 +62,7 @@ const ContactUs = () => {
           <h2>Contactanos</h2>
           <FirstBoxContent>
             <a
-              href="https://wa.link/hey16u"
+              href="https://wa.me/5491158227373"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -72,14 +72,14 @@ const ContactUs = () => {
               <FontAwesomeIcon icon={faMapMarkerAlt} />
               Guamini 4742, Ciudad Autonoma de Buenos Aires, Villa Lugano.
             </a>
-            <a
+            {/* <a
               href="http://chulosdesign.mitiendanube.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faStore} />
               Tienda
-            </a>
+            </a> */}
           </FirstBoxContent>
           <SocialLinks>
             <a

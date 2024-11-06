@@ -8,7 +8,6 @@ export const FooterWrapper = styled.footer`
   flex-wrap: wrap;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
 
-
   background-image: url(${(props) => props.$bckgImg});
   background-size: cover;
   background-position: center;
@@ -39,14 +38,15 @@ export const FooterTitle = styled.h3`
 `;
 
 export const FooterLink = styled.a`
-  color: white;
+  color: var(--greenFull2);
   margin: 5px 0;
   text-decoration: none;
-  transition: 0.3s ease-in-out;
+  transition: 0s ease-in-out;
   font-size: 0.95em;
+  font-weight: 400;
   cursor: pointer;
   &:hover {
-    color: var(--greenFull7);
+    color: var(--silverFull1);
     text-decoration: underline;
   }
 `;
@@ -83,9 +83,8 @@ export const Logo = styled.img`
   box-shadow: 1px 1px 10px black;
 `;
 
-
 export const CreatorTag = styled.a`
-margin-top: 25px;
+  margin-top: 25px;
   color: white;
   text-decoration: none;
   &:hover {

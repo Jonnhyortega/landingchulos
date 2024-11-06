@@ -44,7 +44,7 @@ const AboutUs = () => {
             pasión.
           </h3>
           <p>
-            <strong>Chulos Diseños</strong> nace a partir de la pasión por
+            <strong>Chulos design</strong> nace a partir de la pasión por
             materializar y darle vida a proyectos que viven en nuestra
             imaginación. Somos una empresa familiar dedicada al diseño de
             interiores, trabajamos con una amplia diversidad de materiales como

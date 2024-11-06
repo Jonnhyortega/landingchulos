@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import {ButtonFirst} from "../../Buttons/ButtonFirst/ButtonFirst"
-import logo from "../../../imgs/Logo.png"
+import { ButtonFirst } from "../../Buttons/ButtonFirst/ButtonFirst";
+import logo from "../../../imgs/Logo.png";
 const ModalFormWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -35,6 +35,9 @@ const ModalFormWrapper = styled.div`
     color: var(--greenFull1);
     font-weight: 700;
     font-size: 1.4em;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
   }
 
   div > span {
@@ -65,9 +68,9 @@ const ModalFormWrapper = styled.div`
   }
 
   div > img {
-  width: 100px;
-  margin: 0 auto;
-  border-radius: 50%;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
   }
 `;
 export default function ModalForm({ updateModalOpen }) {
@@ -85,7 +88,10 @@ export default function ModalForm({ updateModalOpen }) {
           ¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto
           contigo lo antes posible. Gracias por tu interés.
         </p>
-        <ButtonFirst content={"Volver al home"} work={handleClick}></ButtonFirst>
+        <ButtonFirst
+          content={"Volver al home"}
+          work={handleClick}
+        ></ButtonFirst>
       </div>
     </ModalFormWrapper>
   );

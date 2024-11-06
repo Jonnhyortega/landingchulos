@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, useState } from "react";
+import React, { lazy, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuContainer, MenuItem } from "./MenuStyles";
 import bckgMenu from "../../../imgs/MenuBckg/menuBckg1.webp"

@@ -56,16 +56,20 @@ export const DiseñosWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: transparent;
   min-height: 100vh;
 
   h2 {
-    font-size: 40px;
+    font-size: 2.5em;
     color: var(--greenFull1);
     animation: ${titleFrame} 1s ease-in-out;
     font-weight: bold;
     text-align: center;
+    padding: .2em 1em;
+    @media (max-width: 568px) {
+      font-size: 2em;
+    }
   }
 
   p {
@@ -73,8 +77,12 @@ export const DiseñosWrapper = styled.div`
     font-weight: 600;
     font-size: 1.2em;
     padding: 0 3em;
-    text-align: justify;
+    text-align: left;
     animation: ${titleFrame} 1s ease-in-out;
+  
+    @media (max-width: 568px) {
+      font-size: 1em;
+    }
   }
 
   button {
@@ -149,7 +157,6 @@ export const OverlayImage = styled.img`
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.7);
   transition: transform 0.4s ease, filter 0.4s ease;
 
-  /* Añadimos las animaciones en función de la dirección */
   animation: ${({ direction }) =>
     direction === "left"
       ? css`
@@ -202,29 +209,28 @@ export const ArrowButton = styled.button`
 
   &:hover {
     color: var(--greenFull1);
-    transform: scale(1.4) translateY(-40%);
   }
 `;
 
 export const QuoteButton = styled.a`
   display: inline-block;
-  background-color: #28a745; /* Color verde para el botón */
-  color: white; /* Color del texto */
-  padding: 10px 20px; /* Espaciado interno */
-  margin: 20px 0; /* Margen superior e inferior */
-  border-radius: 5px; /* Bordes redondeados */
-  text-decoration: none; /* Sin subrayado */
-  font-size: 16px; /* Tamaño de fuente */
-  font-weight: bold; /* Texto en negrita */
-  text-align: center; /* Centrar texto */
-  transition: background-color 0.3s, transform 0.2s; /* Transiciones para efectos */
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
 
   &:hover {
-    background-color: #218838; /* Color más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+    background-color: #218838;
+    transform: scale(1.05);
   }
 
   &:active {
-    transform: scale(0.95); /* Efecto de disminución al hacer clic */
+    transform: scale(0.95);
   }
 `;

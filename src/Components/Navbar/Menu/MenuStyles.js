@@ -35,9 +35,9 @@ export const MenuContainer = styled.div`
   gap: 20px;
   border-radius: 5px;
   border: 1px solid var(--greenFull1);
-  backdrop-filter: blur(25px) saturate(50%);
-  -webkit-backdrop-filter: blur(25px) saturate(50%);
-  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(25px) saturate(0%);
+  -webkit-backdrop-filter: blur(25px) saturate(0%);
+  background-color: rgba(0, 0, 0, 0);
   &.open {
     animation: ${slideIn} 0.5s forwards;
     opacity: 1;
@@ -70,8 +70,7 @@ export const MenuItem = styled.div`
   transition: 0.5s;
   background: transparent;
   border-radius: 15px;
-  
-  
+
   &:hover {
     color: black;
     letter-spacing: 2px;

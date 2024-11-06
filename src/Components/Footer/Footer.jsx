@@ -21,7 +21,7 @@ import {
 } from "react-icons/fa";
 import bckgMenu from "../../imgs/MenuBckg/menuBckg.jpg";
 import logo from "../../imgs/Logo.png";
-export function Footer() {
+export const Footer = () => {
   const navigateTo = useNavigate();
   return (
     <FooterWrapper $bckgImg={bckgMenu}>
@@ -49,7 +49,7 @@ export function Footer() {
             </SocialIcon>
             <SocialIcon
               target="blank"
-              href="https://www.instagram.com/chulos.terrazzo?igsh=a3FkcWFnMmVlamR2"
+              href="https://www.instagram.com/chulos.design/"
             >
               <FaInstagram />
             </SocialIcon>
@@ -70,6 +70,6 @@ export function Footer() {
       {/* <CreatorTag href="https://wa.link/hey16u">Creator</CreatorTag> */}
     </FooterWrapper>
   );
-}
+};
 
 export default Footer;

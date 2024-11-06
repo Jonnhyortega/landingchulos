@@ -40,16 +40,16 @@ export const GlobalStyles = createGlobalStyle`
       }
       
       ::-webkit-scrollbar-track {
-        background: var(--greenFull1);
+        background: rgb(205, 205, 205);
         }
         
         ::-webkit-scrollbar-thumb {
-          background: var(--silverFull5);
-          border-radius: 3px;
+          background: var(--silverFull2);
+          border-radius: 1px;
           }
           
       ::-webkit-scrollbar-thumb:hover {
-         background: var(--greenFull3);
+         background: var(--silverFull1);;
       }
     /* Scrollbar Styles */
     
