@@ -83,7 +83,7 @@ const ContactUs = () => {
           </FirstBoxContent>
           <SocialLinks>
             <a
-              href="https://www.instagram.com/chulos.terrazzo?igsh=a3FkcWFnMmVlamR2"
+              href="https://www.instagram.com/chulos.design/"
               target="_blank"
               rel="noopener noreferrer"
             >
