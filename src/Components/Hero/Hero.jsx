@@ -63,7 +63,7 @@ export const Hero = () => {
         </HeroSubtitle>
         <ButtonsBox>
           <ButtonFirst content={"Ver diseños"} work={handleRedirect} />
-          <ButtonFirst content={"Ver tienda"} work={handleRedirectStore} />
+          {/* <ButtonFirst content={"Ver tienda"} work={handleRedirectStore} /> */}
         </ButtonsBox>
       </Content>
     </HeroContainer>

@@ -10,10 +10,11 @@ import {
 } from "./AboutUsStyles";
 import img1 from "../../imgs/AboutUsImg/aboutUsImg.jpeg";
 import img2 from "../../imgs/AboutUsImg/aboutUsImg2.jpeg";
+import img3 from "../../imgs/AboutUsImg/aboutUsImg3.webp";
 import ButtonFirst from "../../Components/Buttons/ButtonFirst/ButtonFirst";
 import { useNavigate } from "react-router-dom";
 
-const images = [img1, img2];
+const images = [img1, img2, img3];
 
 const AboutUs = () => {
   const [currentImage, setCurrentImage] = useState(0);

@@ -53,6 +53,10 @@ const titleFrame = keyframes`
 `;
 
 export const DiseñosWrapper = styled.div`
+  // * {
+  //   border: 1px solid gold;
+  // }
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +70,7 @@ export const DiseñosWrapper = styled.div`
     animation: ${titleFrame} 1s ease-in-out;
     font-weight: bold;
     text-align: center;
-    padding: .2em 1em;
+    padding: 0.2em 1em;
     @media (max-width: 568px) {
       font-size: 2em;
     }
@@ -79,10 +83,17 @@ export const DiseñosWrapper = styled.div`
     padding: 0 3em;
     text-align: left;
     animation: ${titleFrame} 1s ease-in-out;
-  
+
     @media (max-width: 568px) {
       font-size: 1em;
     }
+  }
+
+  h3 {
+    font-size: 2em;
+    color: var(--greenFull2);
+    margin-top: 70px;
+    font-weight: 500;
   }
 
   button {
@@ -92,29 +103,22 @@ export const DiseñosWrapper = styled.div`
 
 export const Gallery = styled.div`
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 90%;
-  max-width: 1200px;
-  margin-top: 40px;
-  @media (max-width: 568px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  overflow-x: scroll;
+  gap: 50px;
+  width: 100%;
+  height: 350px;
+  border-top: 10px solid var(--greenFull1);
+  box-shadow: 1px 1px 10px black;
+  font-weight: 400;
 `;
 
 export const ImageCard = styled.div`
   position: relative;
-  overflow: hidden;
-  border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
-  max-width: 200px;
-  max-height: 150px;
+  height: 200px;
 
   &:hover {
     transform: scale(1.05);
@@ -124,17 +128,47 @@ export const ImageCard = styled.div`
   &:hover img {
     opacity: 0.8;
   }
-  @media (max-width: 568px) {
-    width: 150px;
-  }
 `;
 
 export const Image = styled.img`
-  width: 100%;
+  width: 250px;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
   transition: opacity 0.3s ease;
+  border-radius: 3px;
+`;
+
+export const VideoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  text-align: center;
+  gap: 10px;
+  margin: 20px auto;
+  width: 100%;
+
+  span {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--greenFull2);
+    font-weight: 500;
+  }
+
+  video {
+    width: auto;
+    max-width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px var(--greenFull1);
+  }
+
+  @media (max-width: 568px) {
+    span {
+      font-size: 1.5em;
+    }
+  }
 `;
 
 export const Overlay = styled.div`
@@ -143,7 +177,7 @@ export const Overlay = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--greenFull3);
   display: flex;
   align-items: center;
   justify-content: center;

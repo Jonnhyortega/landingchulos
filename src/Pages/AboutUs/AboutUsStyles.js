@@ -82,14 +82,17 @@ export const ImageSlider = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   overflow: hidden;
   margin: 0 auto;
+
+  @media(max-width: 568px){
+  width: 100%;
+  }
 `;
 
 export const Image = styled.img`
   width: 100%;
-  height: auto;
   border-radius: 12px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
   transition: opacity 1s ease, transform 1s ease;

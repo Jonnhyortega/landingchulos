@@ -90,7 +90,7 @@ const ContactUs = () => {
               <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
-              href="https://www.facebook.com/search/top?q=chulos%20wood"
+              href="https://www.facebook.com/profile.php?id=100070733544658"
               target="_blank"
               rel="noopener noreferrer"
             >

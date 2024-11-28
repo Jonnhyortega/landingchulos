@@ -4,6 +4,7 @@ import {
   Gallery,
   ImageCard,
   Image,
+  VideoContainer,
   Overlay,
   OverlayImage,
   CloseButton,
@@ -21,14 +22,42 @@ import img6 from "../../imgs/Divisores/DivisoresImg6.webp";
 import img7 from "../../imgs/Divisores/DivisoresImg7.webp";
 import img8 from "../../imgs/Divisores/DivisoresImg8.webp";
 import img9 from "../../imgs/Divisores/DivisoresImg9.webp";
+import img10 from "../../imgs/Divisores/DivisoresImg10.webp";
+import img11 from "../../imgs/Divisores/DivisoresImg11.webp";
+import img12 from "../../imgs/Divisores/DivisoresImg12.webp";
+import img14 from "../../imgs/Divisores/DivisoresImg14.webp";
+import img15 from "../../imgs/Divisores/DivisoresImg15.webp";
+import img16 from "../../imgs/Divisores/DivisoresImg16.webp";
+import img18 from "../../imgs/Divisores/DivisoresImg18.webp";
+import img19 from "../../imgs/Divisores/DivisoresImg19.webp";
+import img20 from "../../imgs/Divisores/DivisoresImg20.webp";
+import videoSrc from "../../videos/diseños/divisoresVideo1.mp4";
 
 export default function Diseños() {
-  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+  const images = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img14,
+    img15,
+    img16,
+    img18,
+    img19,
+    img20,
+  ];
 
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Variables para deslizador táctil
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -85,7 +114,6 @@ export default function Diseños() {
     window.open("https://wa.me/5491158227373", "_blank");
   };
 
-  // Funciones para el deslizador táctil
   const handleTouchStart = (e) => {
     touchStartX = e.touches[0].clientX;
   };
@@ -96,10 +124,10 @@ export default function Diseños() {
 
   const handleTouchEnd = () => {
     if (touchStartX - touchEndX > 50) {
-      goToNextImage(); // Deslizar a la izquierda
+      goToNextImage();
     }
     if (touchEndX - touchStartX > 50) {
-      goToPrevImage(); // Deslizar a la derecha
+      goToPrevImage();
     }
   };
 
@@ -109,9 +137,12 @@ export default function Diseños() {
       <p>
         Fabricamos divisores de ambiente elaborados en madera enchapada de
         primera calidad de la linea Faplac con cantos de abs y varillas movibles
-        que regulan la entrada de luz. Realizamos diseños personalizados buscando funcionalidad y estética. 
+        que regulan la entrada de luz. Realizamos diseños personalizados
+        buscando funcionalidad y estética.
       </p>
       <ButtonFirst content={"Pedir cotizacion"} work={redirectToWhatSapp} />
+
+      <h3>Galería</h3>
       <Gallery>
         {images.map((img, index) => (
           <ImageCard key={index} onClick={() => openOverlay(index)}>
@@ -119,6 +150,14 @@ export default function Diseños() {
           </ImageCard>
         ))}
       </Gallery>
+
+      <VideoContainer>
+        <span>Trabajo hecho a medida </span>
+        <video id="myVideo" controls muted>
+          <source src={videoSrc} type="video/mp4" />
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </VideoContainer>
 
       {isOpen && (
         <Overlay

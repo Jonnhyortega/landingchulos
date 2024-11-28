@@ -18,6 +18,7 @@ const ButtonStyled = styled.button`
   @media (max-width: 568px) {
     width: 150px;
     padding: 9px 18px;
+    font-size: .9em;
   }
   &:hover {
     transform: translateY(-3px);
