@@ -37,7 +37,7 @@ export const WhatsAppLink = styled.a`
 `;
 
 export const WhatsAppIcon = styled.img`
-  width: 60px;
+  width: 80px;
   border-radius: 50%;
 
   &:hover {

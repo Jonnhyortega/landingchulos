@@ -10,7 +10,7 @@ export const CallToAction = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(shakeThisElement, 5000); 
+    const interval = setInterval(shakeThisElement, 10000); 
 
     return () => clearInterval(interval); 
   }, []);

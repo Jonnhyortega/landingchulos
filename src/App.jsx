@@ -4,12 +4,14 @@ import { CallToAction } from "./Components/CallToAction/CallToAction";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import { Footer } from "./Components/Footer/Footer";
+import Chatbot from "./Components/Chatbot/Chatbot";
 export function App() {
   return (
     <Layout>
       <Navbar />
       <Routes />
       <Footer />
+      <Chatbot/>
       <CallToAction />
     </Layout>
   );
