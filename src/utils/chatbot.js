@@ -2,23 +2,23 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 let firstInteraction = true;
 
-export async function sendMessage(message) {
-  const isLocal = window.location.hostname === 'localhost';
-  const api_url_intern = isLocal
-    ? 'http://localhost:8000/api/chat/'
+export async function sendMessage(message, context = "jonathan") {
+  const isLocal = window.location.hostname === "localhost";
+  const apiUrl = isLocal
+    ? "http://localhost:8000/api/chat/"
     : API_URL;
 
-  const payload = { message };
+  const payload = { message, context };
+
   if (!firstInteraction) {
     payload.history = [];
   }
-
   firstInteraction = false;
 
-  const response = await fetch(api_url_intern, {
-    method: 'POST',
+  const response = await fetch(apiUrl, {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(payload),
   });

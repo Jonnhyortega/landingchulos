@@ -56,7 +56,7 @@ export const Chatbot = () => {
     setMessages([...messages, { from: "user", text: value }]);
     setInput("");
     setLoading(true);
-    sendMessage(value)
+    sendMessage(value, "chulos")
       .then((r) => {
         setLoading(false);
         setMessages((prev) => [...prev, { from: "bot", text: r }]);
