@@ -107,7 +107,7 @@ const ContactUs = () => {
         </ContactInfo>
       )}
 
-      <form ref={form} onSubmit={sendEmail}>
+      <form className="form-contact" ref={form} onSubmit={sendEmail}>
         <p>Escribe un mensaje</p>
         <FormGroup>
           <Label>Nombre</Label>

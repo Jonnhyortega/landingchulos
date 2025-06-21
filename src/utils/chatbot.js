@@ -10,7 +10,6 @@ export async function sendMessage(message) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json', 
-            'Origin': 'chulosdesign.com'
         },
         body: JSON.stringify({ message }),
     });
