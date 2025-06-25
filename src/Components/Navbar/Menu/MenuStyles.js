@@ -20,10 +20,10 @@ const slideOut = keyframes`
 
 export const MenuContainer = styled.div`
   position: fixed;
-  top: 80px;
+  top: 0px;
   left: 0;
-  width: 88%;
-  height: 60vh;
+  width: 100%;
+  height: 100vh;
   padding: 1rem;
   transform: translateY(-200%);
   opacity: 0;
@@ -31,13 +31,15 @@ export const MenuContainer = styled.div`
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  gap: 20px;
+  align-items: left;
+  justify-content: center;
+  gap: 50px;
   border-radius: 5px;
   border: 1px solid var(--greenFull1);
   backdrop-filter: blur(25px) saturate(0%);
   -webkit-backdrop-filter: blur(25px) saturate(0%);
   background-color: rgba(0, 0, 0, 0);
+
   &.open {
     animation: ${slideIn} 0.5s forwards;
     opacity: 1;
@@ -52,8 +54,8 @@ export const MenuContainer = styled.div`
     border: none;
     position: absolute;
     background: transparent;
-    right: 10px;
-    top: 0;
+    right: 50px;
+    top: 5px;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;

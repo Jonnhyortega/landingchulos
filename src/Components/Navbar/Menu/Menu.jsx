@@ -14,7 +14,7 @@ export function Menu({ toggleMenu, isMenuOpen, closeMenu }) {
   };
 
   return (
-    <>
+    
       <MenuContainer
         $bckgImg={bckgMenu}
         onLoad={lazy}
@@ -34,6 +34,6 @@ export function Menu({ toggleMenu, isMenuOpen, closeMenu }) {
           Nuestros Diseños
         </MenuItem>
       </MenuContainer>
-    </>
+   
   );
 }

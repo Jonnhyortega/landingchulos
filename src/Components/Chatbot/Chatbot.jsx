@@ -1,29 +1,29 @@
+// src/components/Chatbot.jsx
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { ChatbotContainer } from "./ChatbotStyles";
-import { sendMessage } from "../../utils/chatbot.js";
+import logo from "../../imgs/Logo.png";
+import  callChatAPI  from "../../utils/chatbot";
 import "animate.css";
-import { mirage } from 'ldrs'
+import { mirage } from 'ldrs';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-mirage.register()
 
+mirage.register();
 
-export const Chatbot = () => {
+export const Chatbot = ({ context = "" }) => {
   const [chatOpen, setChatOpen] = useState(false);
   const [messages, setMessages] = useState([
-    {
-      from: "bot",
-      text: "¡Hola! Soy ChulosAI, el asistente de Chulos Design 💻\nPuedo ayudarte con dudas técnicas, servicios o contacto.\n¿Con qué querés comenzar?",
-    },
+    { from: "bot", text: "¡Hola! Soy ChulosAI, el asistente de Chulos Design 💻\n¿En qué puedo ayudarte hoy?" }
   ]);
+  const [history, setHistory] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
   const quickReplies = [
-    "¿Qué servicios ofrecés?",
-    "¿Cómo me contacto?",
-    "Necesito soporte",
+    { label: "¿Cómo puedo pedir un presupuesto?", value: "¿Cómo puedo pedir un presupuesto?" },
+    { label: "¿Dónde los encuentro?", value: "¿Dónde los encuentro?" },
+    { label: "Redes sociales", value: "Redes sociales" }
   ];
 
   const toggleChat = () => setChatOpen(!chatOpen);
@@ -32,106 +32,75 @@ export const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages, scrollToBottom]);
+  useEffect(scrollToBottom, [messages, scrollToBottom]);
 
   useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === "Escape") setChatOpen(false);
-    };
+    const handleEsc = e => e.key === "Escape" && setChatOpen(false);
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
 
-  const handleQuick = (txt) => {
-    setInput(txt);
-    handleSubmit(null, txt);
+  const send = async text => {
+    const userMsg = { from: "user", text };
+    setMessages(prev => [...prev, userMsg]);
+    const newHistory = [...history, { role: 'user', content: text }];
+    setHistory(newHistory);
+    setLoading(true);
+
+    let reply;
+    switch(text) {
+      case "¿Cómo puedo pedir un presupuesto?":
+        reply = "¡Genial! Podés pedirme un presupuesto haciendo click aquí: https://wa.me/541158227373";
+        break;
+      case "¿Dónde los encuentro?":
+        reply = "Tenemos nuestro local en Lugano. Podemos coordinar una reunión para charlar de tu proyecto.";
+        break;
+      case "Redes sociales":
+        reply = "¡Seguinos en redes! Instagram: https://instagram.com/jonnhyortega, LinkedIn: https://linkedin.com/in/jonathan-ortega-a00970191";
+        break;
+      default:
+        try {
+          reply = await callChatAPI(text, newHistory, context);
+        } catch {
+          reply = "Lo siento, ocurrió un error. ¿Podés intentar nuevamente?";
+        }
+    }
+
+    const botMsg = { from: "bot", text: reply };
+    setMessages(prev => [...prev, botMsg]);
+    setHistory(prev => [...prev, { role: 'model', content: reply }]);
+    setLoading(false);
   };
 
-  const handleSubmit = (e, override) => {
-    if (e) e.preventDefault();
-    const value = override ?? input;
-    if (!value.trim()) return;
-    setMessages([...messages, { from: "user", text: value }]);
-    setInput("");
-    setLoading(true);
-    sendMessage(value, "chulos")
-      .then((r) => {
-        setLoading(false);
-        setMessages((prev) => [...prev, { from: "bot", text: r }]);
-      })
-      .catch(() => {
-        setLoading(false);
-        setMessages((prev) => [
-          ...prev,
-          {
-            from: "bot",
-            text: "Lo siento, ocurrió un error. ¿Podés intentar nuevamente?",
-          },
-        ]);
-      });
-  };
+  const handleSubmit = e => { e.preventDefault(); if(input.trim()) send(input.trim()) && setInput(""); };
 
   return (
     <ChatbotContainer>
-      {!chatOpen && (
+      {!chatOpen ? (
         <button className="chat-icon" onClick={toggleChat} aria-label="Abrir chat">
-          <img width="60" height="60" src="https://hpanel.hostinger.com/assets/images/intercom.svg" alt="bot" />
+          <img src="https://img.icons8.com/fluency/48/speech-bubble.png" alt="Chat icon" />
         </button>
-      )}
-
-      {chatOpen && (
+      ) : (
         <div className="overlay" onClick={toggleChat}>
-          <button className="close-btn" onClick={toggleChat} aria-label="Cerrar chat">
-            ×
-          </button>
-          <div className="chat-window animate__animated animate__backInUp" onClick={(e) => e.stopPropagation()}>
-            {/* <header className="chat-header">
-              <img width="50" height="50" src="https://img.icons8.com/color/50/bot.png" alt="bot" />             
-            </header> */}
-
+          <div className="chat-window animate__animated animate__backInUp" onClick={e => e.stopPropagation()}>
+            <header className="chat-header">
+              <img src={logo} alt="Logo" />
+              <strong>Chulos design</strong>
+              <button className="close-btn" onClick={toggleChat}>×</button>
+            </header>
             <div className="chat-messages">
-              {messages.map((m, i) => (
-                <div key={i} className={`message ${m.from} animate__animated animate__fadeIn`}>
-                  {m.text}
-                </div>
-              ))}
-              {loading && (
-                <div className="message bot loading">                  
-                  <l-mirage
-                    size="60"
-                    speed="2.5" 
-                    color="white" 
-                  ></l-mirage>
-                </div>
-              )}
-              <div ref={messagesEndRef} />
+              {messages.map((m,i)=>(<div key={i} className={`message ${m.from}`}>{m.text}</div>))}
+              {loading && <div className="message bot loading"><l-mirage size="40"/></div>}
+              <div ref={messagesEndRef}/>
             </div>
-
-            {/* <div className="quick-replies">
-              {quickReplies.map((q, i) => (
-                <button key={i} onClick={() => handleQuick(q)}>
-                  {q}
-                </button>
+            <div className="quick-replies">
+              {quickReplies.map((q,i)=>(
+                <button key={i} onClick={()=>send(q.value)}>{q.label}</button>
               ))}
-            </div> */}
-
-            <form className="chat-input-area" onClick={handleSubmit}>
-              <input
-                type="text"
-                placeholder={"Escribe tu consulta"}
-                value={input}
-                onChange={(e) => {
-                  const v = e.target.value;
-                  if (v.length === 0) return setInput("");
-                  setInput(v.charAt(0).toUpperCase() + v.slice(1));
-                }}
-                autoFocus
-              />
-              <button type="submit" >
-                <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/60/sent.png" alt="sent"/>
-              </button>
+            </div>
+            <form className="chat-input-area" onSubmit={handleSubmit}>
+              <input type="text" placeholder="Escribí tu consulta..." value={input} onChange={e=>setInput(e.target.value)}/>
+              <button type="submit"><FontAwesomeIcon icon={faArrowUp}/></button>
             </form>
           </div>
         </div>

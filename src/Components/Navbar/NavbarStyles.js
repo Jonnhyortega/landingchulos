@@ -3,25 +3,15 @@ import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
   position: fixed;
-  width: 80%;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  top: 0px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: .6rem;
-  z-index: 1000;
-  border-radius: 5px;
-  border: 1px solid var(--greenFull1);
-  // backdrop-filter: blur(5px) saturate(180%);
-  // -webkit-backdrop-filter: blur(25px) saturate(180%);
-  // background-color: rgba(255, 255, 255, 0);
-
-  background-image: url(${(props) => props.$bckgImg});
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  padding: 10px;
+  z-index: 998;
+  background-color: var(--greenFull1);
+  
 `;
 
 
@@ -29,9 +19,10 @@ export const HamburgerMenu = styled.div`
   font-size: 2rem;
   cursor: pointer;
   display: none;
-  color: var(--greenFull1);
+  color: var(--silverFull7);
+  
   @media (max-width: 768px) {
-    display: block;
+    display: flex;  
   }
 `;
 
@@ -55,7 +46,7 @@ export const NavLinkStyled = styled(Link)`
   font-size: 1.2em;
   transition: color 0.1s ease;
   color: white;
-    color: var(--greenFull1);
+    color: var(--silverFull7);
 
   &:hover {
     color: var(--greenFull7);

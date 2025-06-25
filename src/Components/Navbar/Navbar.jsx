@@ -18,7 +18,7 @@ export const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <NavbarContainer $bckgImg={bckgMenu}>
+    <NavbarContainer >
 
       <Logo src={logo} alt="Logo" />
       <HamburgerMenu onClick={toggleMenu}>&#9776;</HamburgerMenu>
