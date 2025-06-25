@@ -6,7 +6,7 @@ export const NavbarContainer = styled.div`
   width: 100%;
   top: 0px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
   z-index: 998;
@@ -20,7 +20,7 @@ export const HamburgerMenu = styled.div`
   cursor: pointer;
   display: none;
   color: var(--silverFull7);
-  
+  margin-right: 30px;
   @media (max-width: 768px) {
     display: flex;  
   }
@@ -34,7 +34,7 @@ export const Logo = styled.img`
 export const LinksContainer = styled.div`
   display: flex;
   gap: 1.5rem;
-
+  margin-right: 30px;
   @media (max-width: 768px) {
     display: none;
   }

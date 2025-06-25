@@ -32,13 +32,14 @@ export const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
+  justify-content: space;
   gap: 50px;
   border-radius: 5px;
   border: 1px solid var(--greenFull1);
   backdrop-filter: blur(25px) saturate(0%);
   -webkit-backdrop-filter: blur(25px) saturate(0%);
   background-color: rgba(0, 0, 0, 0);
+  background-color: var(--greenFull1);
 
   &.open {
     animation: ${slideIn} 0.5s forwards;

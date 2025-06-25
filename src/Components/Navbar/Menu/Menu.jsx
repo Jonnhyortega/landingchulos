@@ -16,7 +16,6 @@ export function Menu({ toggleMenu, isMenuOpen, closeMenu }) {
   return (
     
       <MenuContainer
-        $bckgImg={bckgMenu}
         onLoad={lazy}
         className={isAnimating ? "closing" : isMenuOpen ? "open" : "closed"}
       >

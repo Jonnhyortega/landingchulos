@@ -92,6 +92,10 @@ export const ChatbotContainer = styled.section`
     cursor: pointer;
   }
 
+  .close-btn:hover{
+    color: var(--greenFull6);
+  }
+
   .chat-messages {
     flex: 1;
     padding: 10px;
@@ -159,23 +163,25 @@ export const ChatbotContainer = styled.section`
   .chat-input-area input {
     flex: 1;
     border: 1px solid var(--silverFull3);
-    border-radius: 16px;
+    border-radius: 6px;
     padding: 8px 12px;
     font-size: 14px;
     outline: none;
   }
 
   .chat-input-area button {
-    background: var(--greenFull5);
+    background: var(--greenFull1);
     border: none;
     margin-left: 8px;
-    padding: 8px;
-    border-radius: 50%;
+    padding: 8px 12px;
+    width: 40px;
+    border-radius: 6px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease;
+    color: white;
   }
 
   .chat-input-area button:hover {

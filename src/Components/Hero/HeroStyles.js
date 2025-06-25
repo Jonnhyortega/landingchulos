@@ -19,6 +19,7 @@ export const HeroContainer = styled.section`
   align-items: center;
   text-align: center;
   width: 100%;
+  margin-top: 40px;
   overflow: hidden;
   background-color: #0d0d0d;
 
