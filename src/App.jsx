@@ -30,7 +30,7 @@ export function App() {
       <Navbar />
       <Routes />
       <Footer />
-      {/* <Chatbot context={context}/> */}
+      <Chatbot context={context}/>
       <CallToAction />
     </Layout>
   );
