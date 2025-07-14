@@ -57,6 +57,10 @@ export const ChatbotContainer = styled.section`
     position: absolute;
     bottom: 10px;
     right: 10px;
+
+    @media(max-width: 468px){
+    width: 95%;
+    }
   }
 
   .chat-header {
