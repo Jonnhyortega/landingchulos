@@ -24,16 +24,15 @@ export const MenuContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  padding: 1rem;
   transform: translateY(-200%);
   opacity: 0;
   transition: opacity 1s;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: space;
-  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   border-radius: 5px;
   border: 1px solid var(--greenFull1);
   backdrop-filter: blur(25px) saturate(0%);
@@ -51,12 +50,12 @@ export const MenuContainer = styled.div`
   }
 
   button {
-    color: var(--greenFull1);
+    color: var(--silverFull5);
+    background: transparent;
     border: none;
     position: absolute;
-    background: transparent;
-    right: 50px;
-    top: 5px;
+    right: 20px;
+    top: 15px;
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
@@ -66,16 +65,22 @@ export const MenuContainer = styled.div`
 
 export const MenuItem = styled.div`
   display: block;
-  color: var(--greenFull3);
+  color: var(--silverFull5);
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
   transition: 0.5s;
   background: transparent;
-  border-radius: 15px;
+  padding-bottom: 5px;
+  width: 100px;
+  font-size: 2rem;
+
+  &.active {
+  border-bottom: 2px solid var(--silverFull5);
+  }
 
   &:hover {
-    color: black;
+    color: var(--silverFull4);
     letter-spacing: 2px;
   }
 `;

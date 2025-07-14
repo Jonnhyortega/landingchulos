@@ -19,6 +19,7 @@ export const ChatbotContainer = styled.section`
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease;
+    z-index: 999;
   }
 
   .chat-icon img {
@@ -52,7 +53,6 @@ export const ChatbotContainer = styled.section`
     height: 80vh;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     position: absolute;
     bottom: 10px;

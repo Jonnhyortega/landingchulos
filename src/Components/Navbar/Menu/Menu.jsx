@@ -1,7 +1,8 @@
+// Menu.jsx
 import React, { lazy, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuContainer, MenuItem } from "./MenuStyles";
-import bckgMenu from "../../../imgs/MenuBckg/menuBckg1.webp"
+
 export function Menu({ toggleMenu, isMenuOpen, closeMenu }) {
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -14,25 +15,26 @@ export function Menu({ toggleMenu, isMenuOpen, closeMenu }) {
   };
 
   return (
-    
-      <MenuContainer
-        onLoad={lazy}
-        className={isAnimating ? "closing" : isMenuOpen ? "open" : "closed"}
-      >
-        <button onClick={handleClose}>x</button>
-        <MenuItem as={NavLink} to="/" onClick={handleClose}>
-          Inicio
+    <MenuContainer
+      onLoad={lazy}
+      className={isAnimating ? "closing" : isMenuOpen ? "open" : "closed"}
+    >
+      <button onClick={handleClose}>X</button>
+      {[
+        { to: "/", label: "Inicio" },
+        { to: "/contact", label: "Contacto" },
+        { to: "/about-us", label: "Sobre Nosotros" },
+        { to: "/disenos", label: "Nuestros Diseños" },
+      ].map(({ to, label }) => (
+        <MenuItem
+          as={NavLink}
+          to={to}
+          onClick={handleClose}
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          {label}
         </MenuItem>
-        <MenuItem as={NavLink} to="/contact" onClick={handleClose}>
-          Contacto
-        </MenuItem>
-        <MenuItem as={NavLink} to="/about-us" onClick={handleClose}>
-          Sobre Nosotros
-        </MenuItem>
-        <MenuItem as={NavLink} to="/disenos" onClick={handleClose}>
-          Nuestros Diseños
-        </MenuItem>
-      </MenuContainer>
-   
+      ))}
+    </MenuContainer>
   );
 }

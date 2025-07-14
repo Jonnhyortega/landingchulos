@@ -56,7 +56,7 @@ export const Chatbot = ({ context = "" }) => {
         reply = "Tenemos nuestro local en Lugano. Podemos coordinar una reunión para charlar de tu proyecto.";
         break;
       case "Redes sociales":
-        reply = "¡Seguinos en redes! Instagram: https://instagram.com/jonnhyortega, LinkedIn: https://linkedin.com/in/jonathan-ortega-a00970191";
+        reply = "¡Seguinos en redes! Instagram: https://www.instagram.com/chulos.design/, https://www.facebook.com/profile.php?id=100070733544658";
         break;
       default:
         try {
